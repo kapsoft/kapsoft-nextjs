@@ -1,0 +1,11 @@
+
+> kapsoft-nextjs@0.1.0 dev
+> WATCHPACK_POLLING=true next dev
+
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.50.102:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1007ms

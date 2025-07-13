@@ -1,0 +1,16 @@
+
+> kapsoft-nextjs@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.50.102:3000
+
+ ✓ Starting...
+ ✓ Ready in 936ms
+ ○ Compiling / ...
+ ✓ Compiled / in 634ms (774 modules)
+ GET / 200 in 780ms
+ ✓ Compiled /favicon.ico in 55ms (432 modules)
+ GET /favicon.ico 200 in 98ms
+ GET /favicon.ico 200 in 2ms

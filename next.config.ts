@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.watchOptions = {
+        poll: 1000, // Check for changes every second
+        aggregateTimeout: 300,
+        ignored: ['**/node_modules', '**/.git', '**/.next'],
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

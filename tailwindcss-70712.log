@@ -1,0 +1,67 @@
+2025-07-13T16:48:37.284873Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2025-07-13T16:48:37.285084Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "/Users/deankaplan/dev/work/kapsoft-nextjs", pattern: "**/*", negated: false }
+2025-07-13T16:48:37.285126Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2025-07-13T16:48:37.285131Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "/Users/deankaplan/dev/work/kapsoft-nextjs" }
+2025-07-13T16:48:37.286112Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.286392Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/postcss.config.mjs"
+2025-07-13T16:48:37.286448Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/README.md"
+2025-07-13T16:48:37.286466Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public"
+2025-07-13T16:48:37.286487Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public/file.svg"
+2025-07-13T16:48:37.286498Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public/vercel.svg"
+2025-07-13T16:48:37.286507Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public/next.svg"
+2025-07-13T16:48:37.286514Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public/globe.svg"
+2025-07-13T16:48:37.286521Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public/window.svg"
+2025-07-13T16:48:37.286538Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/package.json"
+2025-07-13T16:48:37.286546Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/tsconfig.json"
+2025-07-13T16:48:37.286570Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/CLAUDE.md"
+2025-07-13T16:48:37.286577Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/next.config.ts"
+2025-07-13T16:48:37.286588Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src"
+2025-07-13T16:48:37.286607Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app"
+2025-07-13T16:48:37.286624Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/layout.tsx"
+2025-07-13T16:48:37.286631Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/page.tsx"
+2025-07-13T16:48:37.286637Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/globals.css"
+2025-07-13T16:48:37.286663Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.286667Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.286670Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.286672Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 13 file(s)
+2025-07-13T16:48:37.286859Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/postcss.config.mjs"
+2025-07-13T16:48:37.286865Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/public/window.svg"
+2025-07-13T16:48:37.286887Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/package.json"
+2025-07-13T16:48:37.286894Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/CLAUDE.md"
+2025-07-13T16:48:37.286904Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/layout.tsx"
+2025-07-13T16:48:37.286872Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/README.md"
+2025-07-13T16:48:37.286899Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/tsconfig.json"
+2025-07-13T16:48:37.286918Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/page.tsx"
+2025-07-13T16:48:37.286897Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/public/file.svg"
+2025-07-13T16:48:37.286924Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/public/next.svg"
+2025-07-13T16:48:37.286925Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/next.config.ts"
+2025-07-13T16:48:37.286869Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/public/vercel.svg"
+2025-07-13T16:48:37.286928Z  INFO tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/public/globe.svg"
+2025-07-13T16:48:37.287117Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287121Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287124Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287588Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287593Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287595Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287597Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-07-13T16:48:37.287610Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app/globals.css"
+2025-07-13T16:48:37.287613Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287616Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287618Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287654Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287657Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287802Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.287979Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.287984Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.288286Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public"
+2025-07-13T16:48:37.288366Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src"
+2025-07-13T16:48:37.288387Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app"
+2025-07-13T16:48:37.288430Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.288536Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.288558Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.288561Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: enter
+2025-07-13T16:48:37.288806Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/public"
+2025-07-13T16:48:37.288875Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src"
+2025-07-13T16:48:37.288892Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "/Users/deankaplan/dev/work/kapsoft-nextjs/src/app"
+2025-07-13T16:48:37.288932Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: exit
+2025-07-13T16:48:37.289205Z  INFO get_globs: tailwindcss_oxide::scanner: exit

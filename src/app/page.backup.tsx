@@ -7,9 +7,6 @@ import { Menu, X, Code, Zap, Shield, ArrowRight, ChevronDown, Mail, Phone, MapPi
 export default function KapsoftWebsite() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,42 +15,6 @@ export default function KapsoftWebsite() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setSubmitMessage('Thank you! Your message has been sent successfully.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitMessage(result.error || 'Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      setSubmitMessage('Failed to send message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const clients = [
     { name: 'Pratt & Whitney', industry: 'Aerospace', gradient: 'from-blue-500 to-sky-600' },
@@ -70,22 +31,19 @@ export default function KapsoftWebsite() {
       icon: <Code className="w-8 h-8" />,
       title: 'Custom Software Development',
       description: 'From MVPs to enterprise solutions, we build scalable applications that drive your business forward.',
-      features: ['Web Applications', 'Mobile Apps', 'API Development', 'Cloud Solutions'],
-      gradient: 'from-blue-500 to-blue-600'
+      features: ['Web Applications', 'Mobile Apps', 'API Development', 'Cloud Solutions']
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'AI & Machine Learning',
       description: 'Leverage cutting-edge AI to automate processes and gain insights from your data.',
-      features: ['RAG', 'Computer Vision', 'NLP Solutions', 'Predictive Analytics', 'Model Training'],
-      gradient: 'from-purple-500 to-purple-600'
+      features: ['RAG', 'Computer Vision', 'NLP Solutions', 'Predictive Analytics', 'Model Training']
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Architecture & Consulting',
       description: 'Expert guidance on technology decisions and system design for optimal performance.',
-      features: ['System Design', 'Code Reviews', 'Performance Optimization', 'Tech Strategy'],
-      gradient: 'from-green-500 to-green-600'
+      features: ['System Design', 'Code Reviews', 'Performance Optimization', 'Tech Strategy']
     }
   ];
 
@@ -112,6 +70,7 @@ export default function KapsoftWebsite() {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
               <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Services</a>
+              <a href="#tech" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Technologies</a>
               <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
               <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all font-medium">
@@ -134,6 +93,7 @@ export default function KapsoftWebsite() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a href="#home" className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">Home</a>
               <a href="#services" className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">Services</a>
+              <a href="#tech" className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">Technologies</a>
               <a href="#about" className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">About</a>
               <a href="#contact" className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">Contact</a>
             </div>
@@ -194,7 +154,7 @@ export default function KapsoftWebsite() {
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-gray-100">
-                <div className={`bg-gradient-to-r ${service.gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-white`}>
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-white">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
@@ -307,8 +267,8 @@ export default function KapsoftWebsite() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Ready to <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Get Started</span>?
@@ -316,101 +276,66 @@ export default function KapsoftWebsite() {
             <p className="text-xl text-gray-600">Let's discuss how we can help with your next project</p>
           </div>
 
-          <div className="space-y-12">
-            {/* Contact Form */}
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6 text-center">Send us a message</h3>
-              <form onSubmit={handleSubmit}>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                    <input 
-                      type="text" 
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors" 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors" 
-                    />
-                  </div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors" />
                 </div>
-                <div className="mt-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors" />
+                </div>
+                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea 
-                    rows={4} 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                  ></textarea>
+                  <textarea rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"></textarea>
                 </div>
-                <div className="mt-6 text-center">
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </div>
-                {submitMessage && (
-                  <div className={`mt-4 text-center p-3 rounded-lg ${submitMessage.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                    {submitMessage}
-                  </div>
-                )}
-              </form>
-            </div>
-
-            {/* Contact Info */}
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold mb-8 text-center">Get in touch</h3>
-              <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div className="flex flex-col items-center">
-                  <div className="bg-blue-100 p-4 rounded-lg mb-4">
-                    <Mail className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700 font-medium">kaplan@kapsoft.com</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="bg-blue-100 p-4 rounded-lg mb-4">
-                    <Phone className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700 font-medium">610-585-6454</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="bg-blue-100 p-4 rounded-lg mb-4">
-                    <MapPin className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <span className="text-gray-700 font-medium">Philadelphia Area, PA</span>
-                </div>
+                <button onClick={() => alert('Contact form will be connected to your backend API')} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all">
+                  Send Message
+                </button>
               </div>
             </div>
 
-            {/* Social Media */}
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-6">Follow us</h3>
-              <div className="flex justify-center space-x-6">
-                <a href="https://github.com/kapsoft/" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition-colors">
-                  <Github className="h-6 w-6 text-gray-700" />
-                </a>
-                <a href="https://www.linkedin.com/in/kapsoft/" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition-colors">
-                  <Linkedin className="h-6 w-6 text-gray-700" />
-                </a>
-                <a href="https://x.com/kapsoft" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-4 rounded-lg hover:bg-gray-200 transition-colors">
-                  <Twitter className="h-6 w-6 text-gray-700" />
-                </a>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Mail className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <span className="text-gray-700">kaplan@kapsoft.com</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Phone className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <span className="text-gray-700">610-585-6454</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <MapPin className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <span className="text-gray-700">Philadelphia, PA</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Follow us</h3>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/kapsoft/" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-3 rounded-lg hover:bg-gray-200 transition-colors">
+                    <Github className="h-5 w-5 text-gray-700" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/kapsoft/" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-3 rounded-lg hover:bg-gray-200 transition-colors">
+                    <Linkedin className="h-5 w-5 text-gray-700" />
+                  </a>
+                  <a href="https://x.com/kapsoft" target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-3 rounded-lg hover:bg-gray-200 transition-colors">
+                    <Twitter className="h-5 w-5 text-gray-700" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
